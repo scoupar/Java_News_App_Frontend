@@ -1,8 +1,21 @@
 import React from 'react';
 
-const Journalist = () => {
+
+const Journalist = ({journalist}) => {
+    
+    if(!journalist){
+        return<p>Loading...</p>
+    }
+
+    const url = "/journalists/" + journalist.id;
+    
     return (
-        <p>Journalist</p>
+        <>
+        {/* <Link to = {url} className = "name"> */}
+        <p>Name:{journalist.name}</p>
+        {/* </Link> */}
+        <p>Title: {journalist.title}</p>
+        </>
     )
 }
 

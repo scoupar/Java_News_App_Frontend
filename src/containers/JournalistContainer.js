@@ -15,7 +15,7 @@ const JournalistContainer = () => {
 
         Promise.all([journalistPromise])
         .then((data) => {
-            setJournalists(data);
+            setJournalists(data[0]);
         })
     }
 
