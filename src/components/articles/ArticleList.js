@@ -1,8 +1,25 @@
 import React from 'react';
+import Article from './Article';
 
-const ArticleList = () => {
+const ArticleList = ({articles}) => {
+
+    const articleListItems = articles.map((article, index) => {   
+        return (
+            <li>
+               <Article article = {article}/> 
+            </li>
+        ) 
+    })
+
+
+
     return (
-        <p>Article List</p>
+        <div className = "article-list">
+        <ul>
+            {articleListItems}
+        </ul>
+        </div>
+        
     )
 }
 
