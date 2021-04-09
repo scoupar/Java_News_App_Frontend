@@ -1,8 +1,16 @@
 import React from 'react';
+import Article from "./Article";
+import {Link} from 'react-router-dom'
 
-const ArticleDetail = () => {
+const ArticleDetail = ({article}) => {
+
+    if(!article){
+        return <p>Loading...</p>
+    }
     return (
-        <p>Article detail</p>
+        <div className = "article-detail">
+            <p>{article.body}</p>
+        </div>
     )
 }
 
