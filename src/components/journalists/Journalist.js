@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 
 const Journalist = ({journalist}) => {
@@ -11,9 +12,9 @@ const Journalist = ({journalist}) => {
     
     return (
         <>
-        {/* <Link to = {url} className = "name"> */}
+        <Link to = {url} className = "name">
         <p>Name:{journalist.name}</p>
-        {/* </Link> */}
+        </Link>
         <p>Title: {journalist.title}</p>
         </>
     )
