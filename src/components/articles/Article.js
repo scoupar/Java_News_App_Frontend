@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import Collapsible from 'react-collapsible';
 
 const Article = ({article}) => {
 
@@ -11,13 +12,20 @@ const Article = ({article}) => {
 
     return (
         <div className = 'article-item'>
+      
             <Link to={url}>
+            
             <p>{article.articleTitle}</p>
+            
             </Link>
+            {/* <Collapsible trigger={article.articleTitle}> */}
             <p>{article.body}</p>
             <p>{article.date}</p>
             <p>{article.journalist.name}</p>
             <p>{article.category}</p>
+            <img src = {article.image} alt="description"/>
+            {/* </Collapsible> */}
+         
 
         </div>
 
