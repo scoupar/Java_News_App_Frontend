@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Article = ({article}) => {
 
@@ -10,13 +11,16 @@ const Article = ({article}) => {
 
     return (
         <div className = 'article-item'>
+            <Link to={url}>
             <p>{article.articleTitle}</p>
+            </Link>
             <p>{article.body}</p>
             <p>{article.date}</p>
             <p>{article.journalist.name}</p>
             <p>{article.category}</p>
 
         </div>
+
     )
 }
 
