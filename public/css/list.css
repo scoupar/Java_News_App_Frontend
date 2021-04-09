@@ -1,14 +1,37 @@
 .article-list {
+    padding-top: 3%;
     display: flex;
-    /* flex-direction: column; */
-    justify-content:  space-between; 
-    /* align-items: center; */
-    overflow: scroll;
+    justify-content: space-between; 
     flex-direction: row;
+    float: inline-start;
+    justify-content: center;
 }
 
 .list-item {
-    /* display: flex; */
-    /* flex-direction: row; */
+    padding-top: 5%;
+    padding-bottom: 10%;
+    justify-content: center;
+    display: inline-block;
     list-style: none;
+    width: 250px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    transition: transform .2s;
+    cursor: pointer;
+    font-size: 12px;
 }
+
+.list-item:hover {
+    transform: scale(1.1);
+}
+
+.transparent-box {
+    background-color: lightgray;
+    border-radius: 5%;
+    /* box-shadow: 5px 5px 5px 5px rgba(175, 175, 175, 0.5); */
+    color: white;
+  
+  }

@@ -5,7 +5,7 @@ const ArticleList = ({articles}) => {
 
     const articleListItems = articles.map((article, index) => {   
         return (
-            <div className="list-item">
+            <div className="list-item transparent-box in-from-bottom">
             <li>
                <Article article = {article}/> 
             </li>
