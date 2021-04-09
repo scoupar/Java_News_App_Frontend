@@ -5,9 +5,11 @@ const ArticleList = ({articles}) => {
 
     const articleListItems = articles.map((article, index) => {   
         return (
+            <div className="list-item">
             <li>
                <Article article = {article}/> 
             </li>
+            </div>
         ) 
     })
 

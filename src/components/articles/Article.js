@@ -14,7 +14,6 @@ const Article = ({article}) => {
             <Link to={url}>
             <p>{article.articleTitle}</p>
             </Link>
-            <p>{article.body}</p>
             <p>{article.date}</p>
             <p>{article.journalist.name}</p>
             <p>{article.category}</p>
