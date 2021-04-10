@@ -12,7 +12,7 @@ const JournalistContainer = () => {
 
     const requestJournalists = function () {
         const request = new Request();
-        const journalistPromise = request.get("/journalists")
+        const journalistPromise = request.get("/admin/journalists")
 
         Promise.all([journalistPromise])
         .then((data) => {

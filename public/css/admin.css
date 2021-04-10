@@ -1,0 +1,12 @@
+form {
+    position: relative;
+    top: 100px;
+}
+
+.journalist-list{
+    position:relative;
+    top:100px;
+    list-style: none;
+    background-color:white;
+    padding: 5px;
+}
