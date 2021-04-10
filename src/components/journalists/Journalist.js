@@ -8,7 +8,7 @@ const Journalist = ({journalist}) => {
         return<p>Loading...</p>
     }
 
-    const url = "/journalists/" + journalist.id;
+    const url = "/admin/journalists/" + journalist.id;
     
     return (
         <>

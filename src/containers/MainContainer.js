@@ -15,7 +15,7 @@ const MainContainer = () => {
                <Route path="/admin/journalists" component={JournalistContainer} />
                <Route path="/articles" component={ArticleContainer} />
                <Route path ="/admin" component={AdminContainer}/>
-
+                                  
 
 
            </Switch>

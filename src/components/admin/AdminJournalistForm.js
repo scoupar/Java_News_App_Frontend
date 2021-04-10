@@ -9,19 +9,6 @@ const AdminJournalistForm = ({journalist, onCreate, onUpdate}) => {
         }
     )
 
-    useEffect(() => {
-        if(journalist){
-            let copiedJournalist ={...journalist}
-            setStateJournalist(copiedJournalist);
-        }else{
-            let resetJournalist ={
-                name:"",
-                title:""
-            }
-            setStateJournalist(resetJournalist);
-        }
-    }, [journalist])
-
 
     const handleChange = function(event){
         let propertyName = event.target.name;
@@ -30,23 +17,44 @@ const AdminJournalistForm = ({journalist, onCreate, onUpdate}) => {
         setStateJournalist(copiedJournalist);
     }
 
+
     const handleSubmit = function(event){
         event.preventDefault();
-        if(stateJournalist.id){
-            onUpdate(stateJournalist)
-        }else{
-            onCreate(stateJournalist)
-        }
+        onCreate(stateJournalist);
     }
+        // if(stateJournalist.id){
+        //     onUpdate(stateJournalist)
+        // }else{
+        //     onCreate(stateJournalist)
+        // }
+    
+
+    // useEffect(() => {
+    //     if(journalist){
+    //         let copiedJournalist ={...journalist}
+    //         setStateJournalist(copiedJournalist);
+    //     }else{
+    //         let resetJournalist ={
+    //             name:"",
+    //             title:""
+    //         }
+    //         setStateJournalist(resetJournalist);
+    //     }
+    // }, [journalist])
+
+
+
+
 
 
     return (
+        <>
         <form onSubmit ={handleSubmit}>
-            <input type ="text" placeholder ="Name" name ="name" onChange = {handleChange} value = {stateJournalist.name}/>
-            <input type ="text" placeholder ="Title" name = "title" onChange = {handleChange} value = {stateJournalist.title}/>
-            <button type = "submit">Save</button>
-
+        <input type ="text" placeholder ="Name" name ="name" onChange = {handleChange} value = {stateJournalist.name}/>
+        <input type ="text" placeholder ="Title" name = "title" onChange = {handleChange} value = {stateJournalist.title}/>
+        <button type = "submit">Save</button>
         </form>
+        </>
     )
 }
 

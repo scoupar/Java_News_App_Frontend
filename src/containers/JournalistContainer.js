@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import Request from '../helpers/request';
-import JournalistList from '../components/journalists/JournalistList';
 import AdminJournalistList from '../components/admin/AdminJournalistList';
 import AdminJournalistForm from '../components/admin/AdminJournalistForm';
 import JournalistDetail from '../components/journalists/JournalistDetail'   
@@ -35,24 +34,20 @@ const JournalistContainer = () => {
         const request = new Request();
         const url = "/admin/journalists/" + id
         request.delete(url)
-        .then(() => window.location = "/admin/journalists"
-        )}
+        .then(() => window.location = "/admin/journalists")
     
-
+    }
     const handlePost = function(journalist){
         const request = new Request();
         request.post("/admin/journalists", journalist)
-        .then(() => {
-            window.location = '/admin/journalists'
-        })
+        .then(() => {window.location = "/admin/journalists"})
+        
     }
 
     const handleUpdate = function(journalist){
         const request = new Request();
         request.patch("/admin/journalists/" + journalist.id, journalist)
-        .then(() => {
-            window.location = "/admin/journalists" + journalist.id
-        })
+        .then(() => window.location = "/admin/journalists" + journalist.id)
     }
 
 
@@ -86,6 +81,8 @@ const JournalistContainer = () => {
         </>
     )
     
-    }
+    
+}
+
 
 export default JournalistContainer;
