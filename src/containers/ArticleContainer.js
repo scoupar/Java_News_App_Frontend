@@ -19,12 +19,22 @@ const ArticleContainer = () => {
     useEffect(() => {
         requestArticles()
     },[])
+
+
+    const findArticleByCategory = function(category) {
+        return articles.find((article) => {
+            return article.category;
+        })
+    }
     
 
     const findArticleById = function(id){
         return articles.find((article) => {
             return article.id === parseInt(id);
         })
+
+    
+
     }
     if(!articles){
         return null
@@ -40,6 +50,11 @@ const ArticleContainer = () => {
             return <ArticleDetail article={article} />
                 
         }}/>
+        <Route exact path ="/articles/category" render={(props) => {
+            const category = props.match.params.category;
+            const article = findArticleByCategory(category);
+            return <ArticleDetail article={article.category} />
+        }} />
 
         <Route render = {
             () => {
