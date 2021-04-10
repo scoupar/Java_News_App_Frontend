@@ -44,17 +44,23 @@ const ArticleContainer = () => {
         <>
         <Switch>
 
+        <Route exact path ="/articles/category" render={(props) => {
+            const category = props.match.params.category;
+            const articleCategory = findArticleByCategory(category);
+            return <ArticleDetail article={articleCategory} />
+        }} />
+
         <Route exact path="/articles/:id" render={(props) => {
             const id = props.match.params.id;
             const article = findArticleById(id);
             return <ArticleDetail article={article} />
                 
         }}/>
-        <Route exact path ="/articles/category" render={(props) => {
+        {/* <Route path ="/articles/:category" render={(props) => {
             const category = props.match.params.category;
             const article = findArticleByCategory(category);
-            return <ArticleDetail article={article.category} />
-        }} />
+            return <ArticleDetail article={article} />
+        }} /> */}
 
         <Route render = {
             () => {
