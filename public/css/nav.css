@@ -1,34 +1,31 @@
 .navLink {
-    display: inline;
-    margin: 50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-right: 10%;
   }
 
 header {
     background-color: rgb(0, 0, 0, 61);
     opacity: 0.7;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 80px;
     display: flex;
-    align-items: center;
-    justify-content: left;
+}
+
+header ul {
+    display: inline;
 }
 
 header * {
     display: inline;
-    justify-content: flex-end;
-}
-
-header li {
-    margin: 20px;
-    border: white;
+    /* justify-content: flex-end; */
 }
 
 .navLink > a {
     color: white;
     text-decoration: none;
     font-family: 'IBM Plex Sans', sans-serif;
-    border: white;
 }

@@ -7,12 +7,18 @@ import ArticleDetail from '../components/articles/ArticleDetail';
 const ArticleContainer = () => {
     
     const [articles, setArticles] = useState([]);
+    const [sportsArticles, setSportsArticles] = useState([]);
     
     const requestArticles = function(){
         const request = new Request();
         const articlePromise = request.get('/articles');
-        Promise.all([articlePromise])
-        .then((data) => {setArticles(data[0]);
+        const sportsArticlePromise = request.get('/articles/category?category=Sports')
+
+
+        Promise.all([articlePromise, sportsArticlePromise])
+        .then((data) => {
+            setArticles(data[0]);
+            setSportsArticles(data[1]);
         })
     }
 
@@ -26,6 +32,12 @@ const ArticleContainer = () => {
             return article.id === parseInt(id);
         })
     }
+
+    const findArticleByCategory = function(category){
+        return articles.find((articles) => {
+            return articles.category
+        })
+    }
     if(!articles){
         return null
     }
@@ -34,6 +46,20 @@ const ArticleContainer = () => {
         <>
         <Switch>
 
+        <Route exact path="/articles" render = {
+            () => {
+                return <ArticleList articles = {articles}/>
+
+            }
+        }/>
+
+        <Route exact path="/articles/sports" render={(props) => {
+            const category = props.match.params.category;
+            const articles = findArticleByCategory(category);
+            return <ArticleList articles={sportsArticles} />
+                
+        }}/>
+
         <Route exact path="/articles/:id" render={(props) => {
             const id = props.match.params.id;
             const article = findArticleById(id);
@@ -41,9 +67,9 @@ const ArticleContainer = () => {
                 
         }}/>
 
-        <Route render = {
+        <Route exact path="/articles/sports" render = {
             () => {
-                return <ArticleList articles = {articles}/>
+                return <ArticleList articles = {sportsArticles}/>
 
             }
         }/>

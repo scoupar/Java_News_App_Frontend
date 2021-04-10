@@ -5,13 +5,19 @@ const NavBar = () => {
     return (
         <header>
             <ul>
-            <div className="logo">
+            <div className="logo navLink">
                 <li className="navLink">
                     <Link to="/">CCNEWS</Link>
                 </li>
             </div>
                 <li className="navLink" id="text">
                     <Link to="/">Home</Link>
+                </li>
+                <li className="navLink" id="text">
+                    <Link to="/topstories">Top Stories</Link>
+                </li>
+                <li className="navLink" id="text">
+                    <Link to="/articles/sports">Sports</Link>
                 </li>
                 <li className="navLink">
                     <Link to="/articles">Articles</Link>
