@@ -17,6 +17,9 @@ const MainContainer = () => {
            <Switch>
                <Route path="/admin/journalists" component={JournalistContainer} />
                <Route path="/articles/sports" component={ArticleContainer} />
+               <Route path="/articles/news" component={ArticleContainer} />
+               <Route path="/articles/entertainment" component={ArticleContainer} />
+               <Route path="/articles/politics" component={ArticleContainer} />
                <Route path="/articles" component={ArticleContainer} />
                <Route path="/articles/category" component={ArticleContainer} />
                <Route path ="/admin" component={AdminContainer}/>
