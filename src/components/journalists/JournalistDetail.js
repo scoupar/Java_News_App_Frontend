@@ -1,6 +1,6 @@
 import React from 'react';
 import Journalist from './Journalist';
-import {link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const JournalistDetail = ({journalist, onDelete}) => {
 
@@ -12,10 +12,13 @@ const JournalistDetail = ({journalist, onDelete}) => {
         onDelete(journalist.id)
     }
 
+    const editUrl = "/admin/journalists/" + journalist.id + "/edit"
+
     return (
         <div className = "journalist-detail">
             <Journalist journalist = {journalist}/>
             <button onClick = {handleDelete}>Delete {journalist.name}</button>
+            <Link to = {editUrl}><button type="button">Edit {journalist.name}</button></Link>
         </div>
 
 

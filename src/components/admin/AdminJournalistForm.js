@@ -20,35 +20,43 @@ const AdminJournalistForm = ({journalist, onCreate, onUpdate}) => {
 
     const handleSubmit = function(event){
         event.preventDefault();
-        onCreate(stateJournalist);
+                if(stateJournalist.id){
+            onUpdate(stateJournalist)
+        }else{
+            onCreate(stateJournalist)
+        }
+        
     }
-        // if(stateJournalist.id){
-        //     onUpdate(stateJournalist)
-        // }else{
-        //     onCreate(stateJournalist)
-        // }
+
     
 
-    // useEffect(() => {
-    //     if(journalist){
-    //         let copiedJournalist ={...journalist}
-    //         setStateJournalist(copiedJournalist);
-    //     }else{
-    //         let resetJournalist ={
-    //             name:"",
-    //             title:""
-    //         }
-    //         setStateJournalist(resetJournalist);
-    //     }
-    // }, [journalist])
+    useEffect(() => {
+        if(journalist){
+            let copiedJournalist ={...journalist}
+            setStateJournalist(copiedJournalist);
+        }else{
+            let resetJournalist ={
+                name:"",
+                title:""
+            }
+            setStateJournalist(resetJournalist);
+        }
+    }, [journalist])
 
 
+    let heading = "";
 
+    if(!journalist){
+        heading = "Create New Journalist"
+    } else{
+        heading = "Edit " + journalist.name;
+    }
 
 
 
     return (
         <>
+        <h2 className ="form-heading">{heading}</h2>
         <form onSubmit ={handleSubmit}>
         <label for ="name">Name: </label>
         <input type ="text" placeholder ="Name" name ="name" onChange = {handleChange} value = {stateJournalist.name}/>
