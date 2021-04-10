@@ -1,0 +1,14 @@
+.article-list {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content:  space-between; 
+    /* align-items: center; */
+    overflow: scroll;
+    flex-direction: row;
+}
+
+.list-item {
+    /* display: flex; */
+    /* flex-direction: row; */
+    list-style: none;
+}
