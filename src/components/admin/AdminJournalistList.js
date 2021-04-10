@@ -1,5 +1,6 @@
 import React from 'react';
 import Journalist from '../../components/journalists/Journalist';
+import {Link} from 'react-router-dom';
 
 const AdminJournalistList = ({journalists}) => {
 
@@ -16,9 +17,12 @@ const AdminJournalistList = ({journalists}) => {
     })
 
     return(
+        <>
+        <Link to ="/admin"><p>Back to Admin Menu</p></Link>
         <ul className = "journalist-list">
             {journalistListItem}
         </ul>
+        </>
     )
 
         

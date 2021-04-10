@@ -19,6 +19,7 @@ const JournalistDetail = ({journalist, onDelete}) => {
             <Journalist journalist = {journalist}/>
             <button onClick = {handleDelete}>Delete {journalist.name}</button>
             <Link to = {editUrl}><button type="button">Edit {journalist.name}</button></Link>
+            <Link to = "/admin/journalists"><p>Return to all journalists</p></Link>
         </div>
 
 
