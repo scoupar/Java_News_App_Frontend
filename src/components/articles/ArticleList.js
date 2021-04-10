@@ -20,8 +20,7 @@ const ArticleList = ({articles}) => {
         <ul>
             {articleListItems}
         </ul>
-        </div>
-        
+        </div>    
     )
 }
 

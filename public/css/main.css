@@ -1,6 +1,6 @@
 body {
     /* padding-top: 7.8%; */
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
     background-image: url(http://localhost:3000/19388.jpg);
     background-size: cover;
 
@@ -12,6 +12,6 @@ body {
     zoom: 100%;
 }
 
-.logo {
+#logo {
     font-weight: 700;
 }

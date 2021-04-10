@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 const TopArticle = ({article}) => {
 
@@ -12,9 +11,9 @@ const TopArticle = ({article}) => {
     return (
         <div className = 'article-item'>          
             <p>{article.title}</p>
-            <p>{article.description}</p>
-            <img src={article.urlToImage} height="150" />
+            <img src={article.urlToImage} height="120" alt="news image"/>
             <br></br>
+            <p>{article.description}</p>
             <button><a target="_blank" href={article.url}>Read more</a></button>
         </div>
     )

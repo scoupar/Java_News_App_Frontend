@@ -22,7 +22,7 @@ const Article = ({article}) => {
             <p>{article.date}</p>
             <p>{article.journalist.name}</p>
             <p>{article.category}</p>
-            <img src = {article.image} alt="description" height="150"/>
+            <img src = {article.image} alt="description" height="120"/>
             {/* </Collapsible> */}
          
 
