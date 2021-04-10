@@ -7,12 +7,18 @@ import ArticleDetail from '../components/articles/ArticleDetail';
 const ArticleContainer = () => {
     
     const [articles, setArticles] = useState([]);
+    const [sportsArticles, setSportsArticles] = useState([]);
     
     const requestArticles = function(){
         const request = new Request();
         const articlePromise = request.get('/articles');
-        Promise.all([articlePromise])
-        .then((data) => {setArticles(data[0]);
+        const sportsArticlePromise = request.get('/articles/category?category=Sports')
+
+
+        Promise.all([articlePromise, sportsArticlePromise])
+        .then((data) => {
+            setArticles(data[0]);
+            setSportsArticles(data[1]);
         })
     }
 
@@ -36,6 +42,12 @@ const ArticleContainer = () => {
     
 
     }
+
+    const findArticleByCategory = function(category){
+        return articles.find((articles) => {
+            return articles.category
+        })
+    }
     if(!articles){
         return null
     }
@@ -44,11 +56,27 @@ const ArticleContainer = () => {
         <>
         <Switch>
 
+<<<<<<< HEAD
         <Route exact path ="/articles/category" render={(props) => {
             const category = props.match.params.category;
             const articleCategory = findArticleByCategory(category);
             return <ArticleDetail article={articleCategory} />
         }} />
+=======
+        <Route exact path="/articles" render = {
+            () => {
+                return <ArticleList articles = {articles}/>
+
+            }
+        }/>
+
+        <Route exact path="/articles/sports" render={(props) => {
+            const category = props.match.params.category;
+            const articles = findArticleByCategory(category);
+            return <ArticleList articles={sportsArticles} />
+                
+        }}/>
+>>>>>>> develop
 
         <Route exact path="/articles/:id" render={(props) => {
             const id = props.match.params.id;
@@ -62,9 +90,9 @@ const ArticleContainer = () => {
             return <ArticleDetail article={article} />
         }} /> */}
 
-        <Route render = {
+        <Route exact path="/articles/sports" render = {
             () => {
-                return <ArticleList articles = {articles}/>
+                return <ArticleList articles = {sportsArticles}/>
 
             }
         }/>
