@@ -18,11 +18,11 @@ const Article = ({article}) => {
             
             </Link>
             {/* <Collapsible trigger={article.articleTitle}> */}
-            <p>{article.body}</p>
+            {/* <p>{article.body}</p> */}
             <p>{article.date}</p>
             <p>{article.journalist.name}</p>
             <p>{article.category}</p>
-            <img src = {article.image} alt="description"/>
+            <img src = {article.image} alt="description" height="150"/>
             {/* </Collapsible> */}
          
 
