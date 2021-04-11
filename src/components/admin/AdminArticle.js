@@ -15,6 +15,7 @@ const AdminArticle = ({article}) => {
                 <p>{article.articleTitle}</p>
             </Link>
             <p>{article.journalist.name}</p>
+            <p>{article.date}</p>
 
         </div>
     )

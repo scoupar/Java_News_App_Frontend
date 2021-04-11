@@ -72,12 +72,12 @@ if (!journalists.length === 0){
     return (
         <>
         <h3>{heading}</h3>
-        <form onSubmit = {handleSubmit}>
+        <form id ="articleForm" onSubmit = {handleSubmit}>
         <input type = "text" placeholder = "article title" name="articleTitle" onChange = {handleChange} value ={stateArticle.articleTitle}/>
-        <input type ="textarea" rows = "20" cols = "40" placeholder = "article body" name="body" onChange = {handleChange} value ={stateArticle.body}/>
+        <textarea rows = "20" cols = "40" placeholder = "article body" name="body" onChange = {handleChange} value ={stateArticle.body}/>
         <input type = "text" placeholder = "intro" name="intro" onChange = {handleChange} value ={stateArticle.intro}/>
         <input type = "date"  name="date" onChange = {handleChange} value ={stateArticle.date}/>
-        <select name ="journalist" onChange ={handleJournalist, handleChange} default value={findJournalistIndex || 'select-journalist'} value ={stateArticle.journalist}>
+        <select name ="journalist" onChange ={handleJournalist}  default value={findJournalistIndex || 'select-journalist'} value ={stateArticle.journalist}>
             <option disabled value='select journalist'>Assign a journalist</option>
             {journalistOptions}
         </select>
@@ -91,6 +91,7 @@ if (!journalists.length === 0){
         <input type = "text" placeholder = "image url" name ="image" onChange = {handleChange} value ={stateArticle.image}/>
         <button type ="submit">Save</button>
         </form>
+        
         </>
         
     )
