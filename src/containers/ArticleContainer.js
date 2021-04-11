@@ -3,6 +3,7 @@ import {Route, Switch} from 'react-router-dom';
 import Request from '../helpers/request';
 import ArticleList from '../components/articles/ArticleList';
 import ArticleDetail from '../components/articles/ArticleDetail';
+import Journalist from '../components/journalists/Journalist';
 
 const ArticleContainer = () => {
     
@@ -26,6 +27,26 @@ const ArticleContainer = () => {
             return article.id === parseInt(id);
         })
     }
+
+    const handleDelete = function(id){
+        const request = new Request();
+        const url = "/articles/" + id
+        request.delete(url)
+        .then(() => {window.location = "/admin/articles"})
+    }
+
+    const handlePost = function(article){
+        const request = new Request();
+        request.post("/articles", article)
+        .then(() => {window.location = "/admin/articles"})
+    }
+
+    const handleUpdate = function(article){
+        const request = new Request();
+        request.patch("/articles/" + article.id, article)
+        .then(() => window.location = "/admin/articles/" + article.id)
+    }
+
     if(!articles){
         return null
     }
@@ -39,6 +60,10 @@ const ArticleContainer = () => {
             const article = findArticleById(id);
             return <ArticleDetail article={article} />
                 
+        }}/>
+
+        <Route exact path ="/admin/articles" render = {() =>{
+            return <ArticleList articles = {articles}/>
         }}/>
 
         

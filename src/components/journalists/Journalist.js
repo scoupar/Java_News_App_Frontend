@@ -13,7 +13,7 @@ const Journalist = ({journalist}) => {
     return (
         <>
         <Link to = {url} className = "name">
-        <p>Name:{journalist.name}</p>
+        <p>{journalist.name}</p>
         </Link>
         <p>Title: {journalist.title}</p>
         </>

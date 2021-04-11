@@ -19,6 +19,7 @@ const AdminJournalistList = ({journalists}) => {
     return(
         <>
         <Link to ="/admin"><p>Back to Admin Menu</p></Link>
+        <Link to ="/admin/journalists/new"><p>Add New Journalist</p></Link>
         <ul className = "journalist-list">
             {journalistListItem}
         </ul>
