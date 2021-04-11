@@ -13,6 +13,18 @@ const ArticleList = ({articles}) => {
         ) 
     })
 
+    const articleCategory = articles.find((article, category) => {
+        return (
+            <li>
+                <Article article = {article.category} />
+            </li>
+        )
+
+
+    })
+
+
+
 
 
     return (
