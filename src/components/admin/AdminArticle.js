@@ -1,0 +1,24 @@
+import React from 'react';
+import {Link} from 'react-router-dom';
+
+const AdminArticle = ({article}) => {
+
+    if(!article){
+        return <p>Loading...</p>
+    }
+
+    const url = '/admin/articles/' + article.id;
+
+    return(
+        <div className = 'admin-article-item'>
+            <Link to ={url}>
+                <p>{article.articleTitle}</p>
+            </Link>
+            <p>{article.journalist.name}</p>
+
+        </div>
+    )
+
+}
+
+export default AdminArticle;

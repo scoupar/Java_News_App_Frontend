@@ -8,6 +8,8 @@ const AdminContainer = () => {
             <>
             <div className = "admin-menu">
             <Link to="/admin/journalists">Add or Edit Journalists</Link>
+            <br></br>
+            <Link to="/admin/articles">Add or Edit Articles</Link>
             </div>
             </>
 

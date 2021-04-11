@@ -1,8 +1,28 @@
 import React from 'react';
+import AdminArticle from './AdminArticle';
 
-const AdminArticleList = () => {
+const AdminArticleList = ({articles}) => {
+
+    const adminArticleListItems = articles.map((article, index) => {   
+        return (
+            <div className="admin-article-list">
+            <li>
+               <AdminArticle article = {article}/> 
+            </li>
+            </div>
+        ) 
+    })
+
+
+
     return (
-        <p>Admin article list</p>
+        <div className="admin-article-list">
+            <ul>
+                {adminArticleListItems}
+            </ul>
+
+        </div>
+        
     )
 }
 

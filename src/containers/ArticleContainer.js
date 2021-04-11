@@ -4,6 +4,8 @@ import Request from '../helpers/request';
 import ArticleList from '../components/articles/ArticleList';
 import ArticleDetail from '../components/articles/ArticleDetail';
 import Journalist from '../components/journalists/Journalist';
+import AdminArticleList from '../components/admin/AdminArticleList';
+import AdminArticleForm from '../components/admin/AdminArticleForm';
 
 const ArticleContainer = () => {
     
@@ -121,7 +123,14 @@ const ArticleContainer = () => {
         }} /> */}
 
         <Route exact path ="/admin/articles" render = {() =>{
-            return <ArticleList articles = {articles}/>
+            return <AdminArticleList articles = {articles}/>
+        }}/>
+
+        <Route exact path="/admin/articles/:id" render={(props) => {
+            const id = props.match.params.id;
+            const article = findArticleById(id);
+            return <AdminArticleForm article={article} />
+                
         }}/>
 
         
