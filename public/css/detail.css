@@ -4,7 +4,7 @@
     margin-left: 200px;
     text-justify: inter-word;
     text-align: center;   
-    word-wrap: normal;
+    word-break: break-word;
     margin-top: 10%;
     justify-content: center;
    
