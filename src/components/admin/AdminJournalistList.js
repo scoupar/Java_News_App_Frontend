@@ -18,8 +18,10 @@ const AdminJournalistList = ({journalists}) => {
 
     return(
         <>
+        <div className="admin-links">
         <Link to ="/admin"><p>Back to Admin Menu</p></Link>
         <Link to ="/admin/journalists/new"><p>Add New Journalist</p></Link>
+        </div>
         <ul className = "journalist-list">
             {journalistListItem}
         </ul>

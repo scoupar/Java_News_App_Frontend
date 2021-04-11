@@ -120,17 +120,14 @@ const ArticleContainer = () => {
             return <ArticleDetail article={article} />
         }} /> */}
 
-<<<<<<< HEAD
         <Route exact path ="/admin/articles" render = {() =>{
             return <ArticleList articles = {articles}/>
         }}/>
 
         
 
-        <Route render = {
-=======
+
         <Route exact path="/articles/sports" render = {
->>>>>>> develop
             () => {
                 return <ArticleList articles = {sportsArticles}/>
             }
