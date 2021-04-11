@@ -91,6 +91,13 @@
     animation-fill-mode: forwards;
 }
 
+.bouncy4 {
+    animation: 6s linear;
+    position:relative;
+    animation-name: bouncy;
+    animation-fill-mode: forwards;
+}
+
 .in-from-right {
     position: relative;
     animation-name: from_right;

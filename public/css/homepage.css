@@ -4,7 +4,8 @@
 }
 
 .fa {
-    margin-top: 6%;
+    margin-top: 4%;
+    margin-bottom: 1%;
     padding: 20px;
     width: 20px;
     text-align: center;
@@ -34,13 +35,28 @@
 .fa-linkedin {
     background: rgb(255, 255, 255, 0.2);
     color: white;
+    margin-right: 1%;
     border: solid white;
 }
 
-#homepage-article-title {
-    align-items: left;
+.fa-github {
+    background: rgb(255, 255, 255, 0.2);
+    color: white;
+    border: solid white;
 }
 
-#homepage-article-image {
-    align-items: right;
+.homepage-article-title {
+    width: 30%;
+    margin-top: 0.5%;
+    margin-left: 15%;
+    padding-right: 2%;
+}
+
+.homepage-list-item > li {
+    list-style: none;
+}
+
+#homepage-article {
+    display: flex;
+    align-items: center;
 }
