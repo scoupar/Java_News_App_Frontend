@@ -14,6 +14,7 @@ const ArticleContainer = () => {
     const [newsArticles, setNewsArticles] = useState([]);
     const [entertainmentArticles, setEntertainmentArticles] = useState([]);
     const [politicsArticles, setPoliticsArticles] = useState([]);
+    const [articlesJournalist, setArticlesJournalist] = useState([]);
 
     
     const requestArticles = function(){
@@ -23,15 +24,17 @@ const ArticleContainer = () => {
         const newsArticlePromise = request.get('/articles/category?category=News')
         const entertainmentArticlePromise = request.get('/articles/category?category=Entertainment')
         const politicsArticlePromise = request.get('/articles/category?category=Politics')
+        const articlesJournalistPromise = request.get('/admin/journalists')
 
 
-        Promise.all([articlePromise, sportsArticlePromise, newsArticlePromise, entertainmentArticlePromise, politicsArticlePromise])
+        Promise.all([articlePromise, sportsArticlePromise, newsArticlePromise, entertainmentArticlePromise, politicsArticlePromise, articlesJournalistPromise])
         .then((data) => {
             setArticles(data[0]);
             setSportsArticles(data[1]);
             setNewsArticles(data[2]);
             setEntertainmentArticles(data[3]);
             setPoliticsArticles(data[4]);
+            setArticlesJournalist(data[5]);
         })
     }
 
@@ -123,13 +126,13 @@ const ArticleContainer = () => {
         }} /> */}
 
         <Route exact path ="/admin/articles" render = {() =>{
-            return <AdminArticleList articles = {articles}/>
+            return <AdminArticleList articles = {articles} onDelete = {handleDelete}/>
         }}/>
 
         <Route exact path="/admin/articles/:id" render={(props) => {
             const id = props.match.params.id;
             const article = findArticleById(id);
-            return <AdminArticleForm article={article} />
+            return <AdminArticleForm article={article} journalists = {articlesJournalist} onUpdate ={handleUpdate} onCreate = {handlePost}/>
                 
         }}/>
 
