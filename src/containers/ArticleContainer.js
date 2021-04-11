@@ -86,9 +86,7 @@ const ArticleContainer = () => {
 
         <Route exact path="/articles/politics" render={(props) => {
             return <ArticleList articles={politicsArticles} />                
-        }}/>
-
-        
+        }}/> 
 
         <Route exact path="/articles/:id" render={(props) => {
             const id = props.match.params.id;
