@@ -11,12 +11,21 @@ const Article = ({article}) => {
 
     return (
         <div className = 'article-item'>
+      
             <Link to={url}>
+            
             <p>{article.articleTitle}</p>
+            
             </Link>
+            {/* <Collapsible trigger={article.articleTitle}> */}
+            {/* <p>{article.body}</p> */}
             <p>{article.date}</p>
-            <p>{article.journalist.name}</p>
+            <p><p>By</p>{article.journalist.name}</p>
+            <p>{article.intro}</p>
             <p>{article.category}</p>
+            <img src = {article.image} alt="description" height="150"/>
+            {/* </Collapsible> */}
+         
 
         </div>
 

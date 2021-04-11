@@ -1,0 +1,17 @@
+body {
+    /* padding-top: 7.8%; */
+    font-family: sans-serif;
+    background-image: url(http://localhost:3000/19388.jpg);
+    background-size: cover;
+
+}
+
+.background-image {
+    height: auto;
+    opacity: none;
+    zoom: 100%;
+}
+
+.logo {
+    font-weight: 700;
+}
