@@ -1,8 +1,14 @@
 .article-detail {
-    display: flex;
+    display: inline-block;
     margin-right: 200px;
     margin-left: 200px;
-    text-justify: inter-character;
+    text-justify: inter-word;
+    text-align: center;
+   
+    word-wrap: normal;
     margin-top: 10%;
     justify-content: center;
+   
 }
+
+

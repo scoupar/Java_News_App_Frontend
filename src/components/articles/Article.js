@@ -15,16 +15,17 @@ const Article = ({article}) => {
             <Link to={url}>
             
             <p>{article.articleTitle}</p>
-            
             </Link>
-            {/* <Collapsible trigger={article.articleTitle}> */}
-            {/* <p>{article.body}</p> */}
+     
+            
             <p>{article.date}</p>
             <p><p>By</p>{article.journalist.name}</p>
+            <Link to={url}>
             <p>{article.intro}</p>
+            </Link>
             <p>{article.category}</p>
             <img src = {article.image} alt="description" height="120"/>
-            {/* </Collapsible> */}
+        
          
 
         </div>
