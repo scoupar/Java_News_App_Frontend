@@ -89,7 +89,7 @@ if (!journalists.length === 0){
             <option>Politics</option>
         </select>
         <input type = "text" placeholder = "image url" name ="image" onChange = {handleChange} value ={stateArticle.image}/>
-        <button tpye ="submit">Save</button>
+        <button type ="submit">Save</button>
         </form>
         </>
         

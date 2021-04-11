@@ -1,7 +1,11 @@
 import React from 'react';
 import AdminArticle from './AdminArticle';
 
-const AdminArticleList = ({articles, onDelete}) => {
+const AdminArticleList = ({articles, onDelete, article}) => {
+
+const handleDelete = () => {
+    onDelete(article.id)
+}
 
     const adminArticleListItems = articles.map((article, index) => {   
         return (
@@ -9,6 +13,7 @@ const AdminArticleList = ({articles, onDelete}) => {
             <ul>
             <li>
                <AdminArticle article = {article}/> 
+               <button onClick ={handleDelete}>Delete</button>
             </li>
             </ul>
             </div>

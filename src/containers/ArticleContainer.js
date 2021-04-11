@@ -75,7 +75,7 @@ const ArticleContainer = () => {
     const handleUpdate = function(article){
         const request = new Request();
         request.patch("/articles/" + article.id, article)
-        .then(() => window.location = "/admin/articles/" + article.id)
+        .then(() => window.location = "/admin/articles/")
     }
 
     // const findArticleByCategory = function(category){
@@ -125,8 +125,10 @@ const ArticleContainer = () => {
             return <ArticleDetail article={article} />
         }} /> */}
 
-        <Route exact path ="/admin/articles" render = {() =>{
-            return <AdminArticleList articles = {articles} onDelete = {handleDelete}/>
+        <Route exact path ="/admin/articles" render = {(props) =>{
+            const id = props.match.params.id;
+            const article = findArticleById(id);
+            return <AdminArticleList article = {article} articles = {articles}  onDelete = {handleDelete}/>
         }}/>
 
         <Route exact path="/admin/articles/:id" render={(props) => {
