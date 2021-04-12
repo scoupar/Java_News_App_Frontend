@@ -17,6 +17,10 @@ const MainContainer = () => {
            <NavBar className="navBar"/>
            <Switch>
                <Route path="/admin/journalists" component={JournalistContainer} />
+               <Route path="/articles/journalist/name/HelenAguda" component={JournalistContainer} />
+               <Route path="/articles/journalist/name/ScottCoupar" component={JournalistContainer} />
+               <Route path="/articles/journalist/name/TinaHouston" component={JournalistContainer} />
+               <Route path="/articles/journalist/name/GregorSimpson" component={JournalistContainer} />
                <Route path ="/admin/articles" component = {ArticleContainer}/>
                <Route path="/articles/sports" component={ArticleContainer} />
                <Route path="/articles/news" component={ArticleContainer} />

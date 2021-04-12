@@ -4,19 +4,34 @@ import Request from '../helpers/request';
 import AdminJournalistList from '../components/admin/AdminJournalistList';
 import AdminJournalistForm from '../components/admin/AdminJournalistForm';
 import JournalistDetail from '../components/journalists/JournalistDetail'   
+import ArticleList from '../components/articles/ArticleList';
 
 const JournalistContainer = () => {
 
     const [journalists, setJournalists] = useState([])
+    const [journalistHelen, setJournalistHelen] = useState([])
+    const [journalistScott, setJournalistScott] = useState([])
+    const [journalistTina, setJournalistTina] = useState([])
+    const [journalistGregor, setJournalistGregor] = useState([])
+    
+
 
 
     const requestJournalists = function () {
         const request = new Request();
         const journalistPromise = request.get("/admin/journalists")
+        const journalistHelenPromise = request.get("/articles/journalist/name?name=Helen Aguda")
+        const journalistScottPromise = request.get("/articles/journalist/name?name=Scott Coupar")
+        const journalistTinaPromise = request.get("/articles/journalist/name?name=Tina Houston")
+        const journalistGregorPromise = request.get("/articles/journalist/name?name=Gregor Simpson")
 
-        Promise.all([journalistPromise])
+        Promise.all([journalistPromise, journalistHelenPromise, journalistScottPromise, journalistTinaPromise, journalistGregorPromise ])
         .then((data) => {
             setJournalists(data[0]);
+            setJournalistHelen(data[1]);
+            setJournalistScott(data[2]);
+            setJournalistTina(data[3]);
+            setJournalistGregor(data[4]);
         })
     }
 
@@ -73,10 +88,32 @@ const JournalistContainer = () => {
             const journalist = findJournalistById(id);
             return <JournalistDetail journalist = {journalist} onDelete = {handleDelete}/>
         }}/>
+
+        
+
+        <Route exact path="/articles/journalist/name/HelenAguda" render={(props) => {
+                    return <ArticleList articles={journalistHelen} />
+        }} />
+        <Route exact path="/articles/journalist/name/ScottCoupar" render={(props) => {
+                    return <ArticleList articles={journalistScott} />
+
+        }} />
+
+        <Route exact path="/articles/journalist/name/TinaHouston" render={(props) => {
+                    return <ArticleList articles={journalistTina} />
+
+        }} />
+
+        <Route exact path="/articles/journalist/name/GregorSimpson" render={(props) => {
+                    return <ArticleList articles={journalistGregor} />
+
+        }} />
  
         <Route render={() => {
         return <AdminJournalistList journalists={journalists}/>
         }} />
+
+        
         </Switch>
         </>
     )
