@@ -6,29 +6,31 @@ const NavBar = () => {
         <header>
             <ul className="nav_ul">
                 <li className="navLink" id="logo">
-                    <Link to="/">CCNEWS</Link>
+                    <Link to="/"><img src="http://localhost:3000/images/logowhite.png" height="40" alt="logo" /></Link>
                 </li>
-                <li className="navLink" id="text">
-                    <Link to="/">Home</Link>
+                <li className="navLink">
+                    <Link to="/articles">All Stories</Link>
                 </li>
                 <li className="navLink" id="text">
                     <Link to="/topstories">Top Stories</Link>
                 </li>
-                <li className="navLink" id="text">
-                    <Link to="/articles/sports">Sports</Link>
+                <li className="navLink">
+                    <Link to="/articles">Articles</Link>
                 </li>
                 <li className="navLink" id="text">
                     <Link to="/articles/news">News</Link>
                 </li>
                 <li className="navLink" id="text">
+                    <Link to="/articles/politics">Politics</Link>
+                </li>
+                <li className="navLink" id="text">
                     <Link to="/articles/entertainment">Entertainment</Link>
                 </li>
                 <li className="navLink" id="text">
-                    <Link to="/articles/politics">Politics</Link>
+                    <Link to="/articles/sports">Sports</Link>
                 </li>
-                <li className="navLink">
-                    <Link to="/articles">Articles</Link>
-                </li>
+               
+                
             </ul>
         </header>
     )

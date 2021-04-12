@@ -14,7 +14,7 @@ const TopArticleList = ({articles}) => {
     })
 
     return (
-        <div className="article-list">
+        <div className="top-article-list">
             <ul>
                 {topArticleListItems}
             </ul>
