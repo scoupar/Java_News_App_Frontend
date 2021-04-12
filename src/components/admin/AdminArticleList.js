@@ -6,6 +6,7 @@ const AdminArticleList = ({articles, onDelete, article}) => {
 
 const handleDelete = (event) => {
     onDelete(event.target.value)
+    
 }
 
     const adminArticleListItems = articles.map((article, index) => {   
