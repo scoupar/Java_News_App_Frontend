@@ -3,6 +3,7 @@ body {
     /* font-family: sans-serif; */
     background-image: url(http://localhost:3000/19388.jpg);
     background-size: cover;
+    
 
 }
 
@@ -80,4 +81,11 @@ body {
   .button:hover span:after {
     opacity: 1;
     right: 0;
+  }
+
+  img{
+
+
+
+    
   }

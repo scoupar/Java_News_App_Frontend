@@ -57,7 +57,7 @@ const AdminJournalistForm = ({journalist, onCreate, onUpdate}) => {
     return (
         <>
         <h2 className ="form-heading">{heading}</h2>
-        <form onSubmit ={handleSubmit}>
+        <form className = "journalist-form"onSubmit ={handleSubmit}>
         <label for ="name">Name: </label>
         <input type ="text" placeholder ="Name" name ="name" onChange = {handleChange} value = {stateJournalist.name}/>
         <label for ="title">Title: </label>
