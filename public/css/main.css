@@ -2,8 +2,7 @@ body {
     /* padding-top: 7.8%; */
     /* font-family: sans-serif; */
     background-image: url(http://localhost:3000/19388.jpg);
-    background-size: cover;
-    font-family: 'Noto Sans JP';
+    background-size: cover;   
 }
 
 .background-image {
@@ -85,4 +84,11 @@ body {
   .button:hover span:after {
     opacity: 1;
     right: 0;
+  }
+
+  img{
+
+
+
+    
   }

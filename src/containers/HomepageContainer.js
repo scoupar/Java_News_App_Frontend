@@ -17,7 +17,6 @@ const HomepageContainer = () => {
         getTopArticle();
     }, [])
 
-
     return (
         <>
         <Switch>

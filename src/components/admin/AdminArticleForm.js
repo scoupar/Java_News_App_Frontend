@@ -71,16 +71,22 @@ if (!journalists.length === 0){
     
     return (
         <>
-        <h3>{heading}</h3>
+        <h2>{heading}</h2>
         <form className ="article-form" onSubmit = {handleSubmit}>
-        <input type = "text" placeholder = "article title" name="articleTitle" onChange = {handleChange} value ={stateArticle.articleTitle}/>
-        <textarea rows = "20" cols = "40" placeholder = "article body" name="body" onChange = {handleChange} value ={stateArticle.body}/>
-        <input type = "text" placeholder = "intro" name="intro" onChange = {handleChange} value ={stateArticle.intro}/>
+        <label for = "articleTitle">Article Headline:</label>
+        <input type = "text" placeholder = "Article Headline" name="articleTitle" onChange = {handleChange} value ={stateArticle.articleTitle}/>
+        <label for = "body">Body:</label>
+        <textarea rows = "20" cols = "40" placeholder = "Article Body" name="body" onChange = {handleChange} value ={stateArticle.body}/>
+        <label for = "intro">Article Intro:</label>
+        <input type = "text" placeholder = "Article Intro" name="intro" onChange = {handleChange} value ={stateArticle.intro}/>
+        <label for = "date">Publish Date:</label>
         <input type = "date"  name="date" onChange = {handleChange} value ={stateArticle.date}/>
+        <label for = "journalist">Article Author:</label>
         <select name ="journalist" onChange ={handleJournalist}  default value={findJournalistIndex || 'select-journalist'} value ={stateArticle.journalist}>
-            <option disabled value='select journalist'>Assign a journalist</option>
+            <option disabled value='select journalist'>Assign a Journalist</option>
             {journalistOptions}
         </select>
+        <label for = "category">Article Category:</label>
         <select name = "category" onChange = {handleChange} value={stateArticle.category}>
             <option disabled value = "select a category">Select a category</option>
             <option>News</option>
@@ -88,6 +94,7 @@ if (!journalists.length === 0){
             <option>Entertainment</option>
             <option>Politics</option>
         </select>
+        <label for = "image">Image URL:</label>
         <input type = "text" placeholder = "image url" name ="image" onChange = {handleChange} value ={stateArticle.image}/>
         <button type ="submit">Save</button>
         </form>
