@@ -91,20 +91,20 @@ const JournalistContainer = () => {
 
         
 
-        <Route exact path="/articles/journalist/name/HelenAguda" render={(props) => {
+        <Route exact path="/articles/journalist/name/Helen Aguda"      render={(props) => {
                     return <ArticleList articles={journalistHelen} />
         }} />
-        <Route exact path="/articles/journalist/name/ScottCoupar" render={(props) => {
+        <Route exact path="/articles/journalist/name/Scott Coupar" render={(props) => {
                     return <ArticleList articles={journalistScott} />
 
         }} />
 
-        <Route exact path="/articles/journalist/name/TinaHouston" render={(props) => {
+        <Route exact path="/articles/journalist/name/Tina Houston" render={(props) => {
                     return <ArticleList articles={journalistTina} />
 
         }} />
 
-        <Route exact path="/articles/journalist/name/GregorSimpson" render={(props) => {
+        <Route exact path="/articles/journalist/name/Gregor Simpson" render={(props) => {
                     return <ArticleList articles={journalistGregor} />
 
         }} />
