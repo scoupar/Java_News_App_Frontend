@@ -1,17 +1,28 @@
 .article-list {
     /* padding-top: 3%; */
-    margin-top: 5%;
+    margin-top: 7%;
     display: flex;
-    justify-content: space-between; 
     flex-direction: row;
     float: inline-start;
     justify-content: center;
+    align-items: flex-start;
+}
+
+.top-article-list {
+     /* padding-top: 3%; */
+     margin-top: 7%;
+     display: flex;
+     flex-direction: row;
+     float: inline-start;
+     justify-content: center;
+     align-items: flex-start;
+     font-size: 10px;
 }
 
 .list-item {
+    align-items: stretch;
     padding-top: 1%;
     padding-bottom: 1%;
-    justify-content: center;
     display: inline-block;
     list-style: none;
     width: 250px;
@@ -21,7 +32,8 @@
     margin-top: 0;
     transition: transform .2s;
     cursor: pointer;
-    font-size: 15px;
+    padding-right: 1%;
+    padding-left: 1%;
 }
 
 .list-item:hover {
@@ -39,3 +51,7 @@
   .list-item > li > a {
       text-decoration: none;
   }
+
+h3 {
+    font-size: 16px;
+}

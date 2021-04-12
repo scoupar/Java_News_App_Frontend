@@ -144,8 +144,7 @@ const ArticleContainer = () => {
         <Route exact path="/articles/sports" render = {
             () => {
                 return <ArticleList articles = {sportsArticles}/>
-            }
-        }/>
+            }}/>
 
         <Route exact path="/articles/news" render = {
             () => {
@@ -164,9 +163,6 @@ const ArticleContainer = () => {
                 return <ArticleList articles = {politicsArticles}/>
             }
         }/>
-
-        
-        
         </Switch>
         
         </>
