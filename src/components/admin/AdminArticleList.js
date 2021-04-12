@@ -3,9 +3,9 @@ import AdminArticle from './AdminArticle';
 
 const AdminArticleList = ({articles, onDelete, article}) => {
 
-console.log("find article id");
-const handleDelete = () => {
-    onDelete(article.id)
+
+const handleDelete = (event) => {
+    onDelete(event.target.value)
 }
 
     const adminArticleListItems = articles.map((article, index) => {   
@@ -14,7 +14,7 @@ const handleDelete = () => {
             <ul>
             <li>
                <AdminArticle article = {article}/> 
-               <button onClick ={handleDelete}>Delete</button>
+               <button value = {article.id} onClick ={handleDelete}>Delete</button>
             </li>
             </ul>
             </div>
