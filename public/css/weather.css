@@ -3,6 +3,8 @@
 
 #weather_wrapper{
 	width: 400px;
+    margin-left: 2%;
+    margin-top: -5%;
 	margin: 100px auto;
 }
 .weatherCard{
@@ -22,7 +24,7 @@
 .currentWeather{
 	width: 180px;
 	height: 200px;
-	background: rgb(237, 237, 237);
+	background: rgba(247, 246, 246, 0.658);
 	margin: 0;
 	position: absolute;
 	top: 0;
@@ -71,11 +73,11 @@
 }
 .rain::before{
 	display: block;
-	content: '\f04e';
+	content: '\f053';
 	font-family: weathericons;
-	font-size: 40px;
+	font-size: 35px;
 	left: 6px;
-	top: -4px;
+	/* top: -2px; */
 	position: absolute;
 }
 .wind {

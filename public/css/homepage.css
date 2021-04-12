@@ -5,7 +5,7 @@
 
 .fa {
     margin-top: 4%;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
     padding: 20px;
     width: 20px;
     text-align: center;
@@ -59,4 +59,17 @@
 #homepage-article {
     display: flex;
     align-items: center;
+}
+
+.top-stories-title {
+    margin-top: -2.5%;
+}
+
+hr {
+    width: 70%;
+    border: none;
+    height: 2px;
+    /* Set the hr color */
+    color: rgba(82, 80, 80, 0.712); /* old IE */
+    background-color: rgba(54, 53, 53, 0.582); /* Modern Browsers */
 }

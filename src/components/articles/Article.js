@@ -10,26 +10,16 @@ const Article = ({article}) => {
     const url = '/articles/' + article.id; 
 
     return (
-        <div className = 'article-item'>
-      
-            <Link to={url}>
-            
-            <p>{article.articleTitle}</p>
-            </Link>
-     
-            
-            <p>{article.date}</p>
-            <p><p>By</p>{article.journalist.name}</p>
-            <Link to={url}>
+        <>
+        <Link to={url}>
+        <div className = 'article-item'>          
+            <h3>{article.articleTitle}</h3>
+            <img src = {article.image} alt="description" height="140"/>
             <p>{article.intro}</p>
-            </Link>
-            <p>{article.category}</p>
-            <img src = {article.image} alt="description" height="120"/>
-        
-         
-
+            <button className="top-stories-button"><a target="_blank" href={url}>Read more</a></button>   
         </div>
-
+        </Link>
+        </>
     )
 }
 

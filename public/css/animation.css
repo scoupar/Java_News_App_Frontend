@@ -71,28 +71,28 @@
 }
 
 .bouncy {
-    animation: 3s linear;
+    animation: 6s linear;
     position:relative;
     animation-name: bouncy;
     animation-fill-mode: forwards;
 }
 
 .bouncy2 {
-    animation: 4s linear;
+    animation: 7s linear;
     position:relative;
     animation-name: bouncy;
     animation-fill-mode: forwards;
 }
 
 .bouncy3 {
-    animation: 5s linear;
+    animation: 8s linear;
     position:relative;
     animation-name: bouncy;
     animation-fill-mode: forwards;
 }
 
 .bouncy4 {
-    animation: 6s linear;
+    animation: 9s linear;
     position:relative;
     animation-name: bouncy;
     animation-fill-mode: forwards;
