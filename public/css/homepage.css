@@ -70,6 +70,7 @@ hr {
     border: none;
     height: 2px;
     /* Set the hr color */
-    color: rgba(82, 80, 80, 0.712); /* old IE */
-    background-color: rgba(54, 53, 53, 0.582); /* Modern Browsers */
+    color: rgba(82, 80, 80, 0.712); 
+    /* background-color: white; */
+    background-color: rgba(54, 53, 53, 0.582); 
 }

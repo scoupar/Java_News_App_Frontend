@@ -3,12 +3,70 @@
     margin-right: 200px;
     margin-left: 200px;
     text-justify: inter-word;
-    text-align: center;   
+    text-align: left;   
     word-break: break-word;
     margin-top: 10%;
     justify-content: center;
     white-space: pre-wrap;
+    margin-top: 12%;
 }
 
+hr.second-hr {
+    color: white;
+    background-color: white;
+    margin-left: -1%;
+    margin-bottom: 5%;
+}
 
+.article-detail-body-text > h5 {
+    font-size: 15px;
+}
 
+.article-detail-body-text > h4 {
+    font-size: 20px;
+}
+
+.article-detail-body-text > hr {
+    color: white;
+}
+
+.article-detail > h2 {
+    margin: -2%;
+    background-color: rgba(0, 0, 0, 0.699);
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin-left: 2px;
+    padding-left: 40px;
+    margin-right: -4px;
+    background-color: rgba(17, 35, 41, 0.548);
+}
+
+#article-detail-journalist {
+    margin-top: 1%;
+    margin-bottom: -1%;
+}
+
+.article-detail-body-text {
+    background-color: rgba(0, 0, 0, 0.541);
+    color: white;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-right: 5%;
+    padding-left: 5%;
+    margin-bottom: 10%;
+}
+
+.fa-clock::before {
+    margin-right: 8px;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.fa-clock {
+    margin-bottom: 3%;
+}
+
+.article-detail > img {
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
