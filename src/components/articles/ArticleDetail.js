@@ -9,7 +9,7 @@ const ArticleDetail = ({article}) => {
         <div className = "article-detail">
             <h2>{article.articleTitle}</h2> 
             <p>By {article.journalist.name}</p>
-            <img src = {article.image} alt="description" height="100"/>          
+            <img src = {article.image} alt="description" height="500"/>          
             <p>{article.body}</p>
         </div>
     )

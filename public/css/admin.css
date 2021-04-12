@@ -95,11 +95,6 @@ h2{
 
 .admin-button{
     margin: 10px;
-    border:none;
-}
-
-.admin-button:hover{
-    background-color:rgb(189, 8, 8);
 }
 
 .admin-article-item {
