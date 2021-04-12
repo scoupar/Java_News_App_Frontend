@@ -72,7 +72,7 @@ if (!journalists.length === 0){
     return (
         <>
         <h3>{heading}</h3>
-        <form id ="articleForm" onSubmit = {handleSubmit}>
+        <form className ="article-form" onSubmit = {handleSubmit}>
         <input type = "text" placeholder = "article title" name="articleTitle" onChange = {handleChange} value ={stateArticle.articleTitle}/>
         <textarea rows = "20" cols = "40" placeholder = "article body" name="body" onChange = {handleChange} value ={stateArticle.body}/>
         <input type = "text" placeholder = "intro" name="intro" onChange = {handleChange} value ={stateArticle.intro}/>

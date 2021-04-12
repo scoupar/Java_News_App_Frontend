@@ -3,6 +3,7 @@ import AdminArticle from './AdminArticle';
 
 const AdminArticleList = ({articles, onDelete, article}) => {
 
+console.log("find article id");
 const handleDelete = () => {
     onDelete(article.id)
 }
