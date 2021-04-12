@@ -3,7 +3,7 @@ body {
     /* font-family: sans-serif; */
     background-image: url(http://localhost:3000/19388.jpg);
     background-size: cover;
-
+    font-family: 'Noto Sans JP';
 }
 
 .background-image {
