@@ -1,30 +1,54 @@
 form {
     position: relative;
-    top: 100px;
+    /* top: 100px; */
+    background-color: rgb(0, 0, 0, 0.65);
 }
 
 .journalist-list{
     position:relative;
     top:100px;
     list-style: none;
-    background-color:white;
+    background-color:rgb(0, 0, 0, 0.65);
     padding: 5px;
+    
 }
+
 
 .admin-menu{
     margin-top: 100px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    background-color: rgb(0, 0, 0, 0.65);
 }
 
 .journalist-detail{
     margin-top: 100px;
+    background-color: rgb(0, 0, 0, 0.65);
+    padding:10px;
 }
 
 .admin-links{
     margin-top:100px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    background-color: rgb(0, 0, 0, 0.65);
+    
+}
+
+.journalist-link{
+    color:white;
+    text-decoration: none;
 }
 
 .admin-article-list{
     margin-top: 100px;
+    list-style: none;
+}
+
+.admin-article-list>ul{
     list-style: none;
 }
 
@@ -38,3 +62,77 @@ form {
 .article-form > input{
     margin:10px;
 }
+
+.article-form > select{
+    margin:10px;
+}
+
+h2{
+    margin-top: 100px;
+    color:white;
+    background-color: rgb(0, 0, 0, 0.65);
+}
+
+.admin-link{
+    color:white;
+    text-decoration: none;
+    
+}
+
+.journalist-item{
+    color:white;
+}
+
+.journalist-name{
+    color:white;
+    text-decoration: none;
+    
+}
+
+.journalist-name:hover{
+    font-size: 1.5em;
+}
+
+.admin-button{
+    margin: 10px;
+    border:none;
+}
+
+.admin-button:hover{
+    background-color:rgb(189, 8, 8);
+}
+
+.admin-article-item {
+    background-color:rgb(0, 0, 0, 0.65);
+    padding: 10px;
+    color:white;
+}
+
+.form-heading{
+    margin-top: 100px;
+    color:white;
+    background-color: rgb(0, 0, 0, 0.65);
+}
+
+.journalist-form{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(0, 0, 0, 0.65);
+    padding:10px;
+
+}
+
+.journalist-form > label{
+    color:white;
+    margin:10px;
+}
+
+.journalist-form > button{
+    margin-left: 10px;
+}
+
+form > label {
+    color:white;
+    padding:5px;
+}
+

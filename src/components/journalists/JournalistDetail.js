@@ -17,9 +17,9 @@ const JournalistDetail = ({journalist, onDelete}) => {
     return (
         <div className = "journalist-detail">
             <Journalist journalist = {journalist}/>
-            <button onClick = {handleDelete}>Delete {journalist.name}</button>
-            <Link to = {editUrl}><button type="button">Edit {journalist.name}</button></Link>
-            <Link to = "/admin/journalists"><p>Return to all journalists</p></Link>
+            <button  className = "admin-button"onClick = {handleDelete}>Delete {journalist.name}</button>
+            <Link to = {editUrl}><button type="button" className = "admin-button">Edit {journalist.name}</button></Link>
+            <Link className = "admin-link"to = "/admin/journalists"><p>Return to all journalists</p></Link>
         </div>
 
 

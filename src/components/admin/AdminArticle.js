@@ -11,7 +11,7 @@ const AdminArticle = ({article}) => {
 
     return(
         <div className = 'admin-article-item'>
-            <Link to ={url}>
+            <Link className = "admin-link" to ={url}>
                 <p>{article.articleTitle}</p>
             </Link>
             <p>{article.journalist.name}</p>
