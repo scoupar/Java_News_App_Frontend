@@ -63,6 +63,14 @@
 
 .top-stories-title {
     margin-top: -2.5%;
+    background-color:rgba(252, 252, 252, 0.5) ;
+    border:solid 2px white;
+    border-radius: 8px;
+    width:50rem;
+    justify-self: center;
+    margin-left:auto;
+    margin-right:auto;
+    
 }
 
 hr {

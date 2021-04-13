@@ -13,6 +13,7 @@ const Journalist = ({journalist}) => {
     return (
         <>
         <Link to = {url} className = "journalist-name">
+        <img className = "journalist-image" src = {journalist.image} alt = "description" height ="100"/>
         <p>{journalist.name}</p>
         </Link>
         <p className ="journalist-item">Title: {journalist.title}</p>

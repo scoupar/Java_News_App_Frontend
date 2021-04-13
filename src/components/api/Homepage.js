@@ -58,7 +58,7 @@ const Homepage = ({articles, weather}) => {
 		    </div>
 	    </div>
         </div>
-        <h1 className="top-stories-title">TOP STORIES</h1>
+        <h1 className="top-stories-title">Top Stories</h1>
         <hr></hr>
         <br></br>
             <ul>

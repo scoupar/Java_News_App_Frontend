@@ -14,11 +14,14 @@ const TopArticleList = ({articles}) => {
     })
 
     return (
+        <>
+        <h1 className = 'page-title'>Breaking News</h1>
         <div className="top-article-list">
             <ul>
                 {topArticleListItems}
             </ul>
         </div>
+        </>
     )
 }
 

@@ -41,9 +41,13 @@ hr.second-hr {
     background-color: rgba(17, 35, 41, 0.548);
 }
 
-#article-detail-journalist {
+#article-detail-journalist  {
     margin-top: 1%;
     margin-bottom: -1%;
+    font-size: 20px;
+}
+#article-detail-journalist > a {
+    color:white;
 }
 
 .article-detail-body-text {
@@ -69,4 +73,28 @@ hr.second-hr {
 .article-detail > img {
     margin-top: 5%;
     margin-bottom: 2%;
+    margin-left:50px;
+    margin-right:auto;
+    
 }
+
+.article-detail > h2 {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 50px;
+    text-align: center;
+    padding:20px;
+}
+
+.article-detail{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.journalist-image{
+    clip-path: circle(50% at 50% 50%);
+    
+    
+    
+
+
+}
+

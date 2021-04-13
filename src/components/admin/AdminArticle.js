@@ -12,7 +12,7 @@ const AdminArticle = ({article}) => {
     return(
         <div className = 'admin-article-item'>
             <Link className = "admin-link" to ={url}>
-                <p>{article.articleTitle}</p>
+                <p>{article.articleTitle} (Click to Edit)</p>
             </Link>
             <p>{article.journalist.name}</p>
             <p>{article.date}</p>
