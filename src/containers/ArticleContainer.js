@@ -18,6 +18,10 @@ const ArticleContainer = () => {
     const [articlesJournalist, setArticlesJournalist] = useState([]);
     const [input, setInput] = useState("");
     const [articleListDefault, setArticleListDefault] = useState();
+    const [sportsArticlesDefault, setSportsArticlesDefault] = useState([]);
+    const [newsArticlesDefault, setNewsArticlesDefault] = useState([]);
+    const [entertainmentArticlesDefault, setEntertainmentArticlesDefault] = useState([]);
+    const [politicsArticlesDefault, setPoliticsArticlesDefault] = useState([]);
     
 
     
@@ -28,12 +32,16 @@ const ArticleContainer = () => {
         const newsArticlePromise = request.get('/articles/category?category=News')
         const entertainmentArticlePromise = request.get('/articles/category?category=Entertainment')
         const politicsArticlePromise = request.get('/articles/category?category=Politics')
+        const sportsArticleDefaultPromise = request.get('/articles/category?category=Sports')
+        const newsArticleDefaultPromise = request.get('/articles/category?category=News')
+        const entertainmentDefaultArticlePromise = request.get('/articles/category?category=Entertainment')
+        const politicsArticleDefaultPromise = request.get('/articles/category?category=Politics')
         const articlesJournalistPromise = request.get('/admin/journalists')
         const articleListDefaultPromise = request.get('/articles');
 
 
         Promise.all([articlePromise, sportsArticlePromise, newsArticlePromise, entertainmentArticlePromise, 
-            politicsArticlePromise, articlesJournalistPromise, articleListDefaultPromise])
+            politicsArticlePromise, articlesJournalistPromise, articleListDefaultPromise, politicsArticleDefaultPromise, entertainmentDefaultArticlePromise, newsArticleDefaultPromise, sportsArticleDefaultPromise])
         .then((data) => {
             setArticles(data[0]);
             setSportsArticles(data[1]);
@@ -42,6 +50,10 @@ const ArticleContainer = () => {
             setPoliticsArticles(data[4]);
             setArticlesJournalist(data[5]);
             setArticleListDefault(data[6])
+            setSportsArticlesDefault(data[7]);
+            setNewsArticlesDefault(data[8]);
+            setEntertainmentArticlesDefault(data[9]);
+            setPoliticsArticlesDefault(data[10]);
         })
     }
 
@@ -51,6 +63,10 @@ const ArticleContainer = () => {
             return article.articleTitle.toLowerCase().includes(input.toLowerCase())
         })
         setInput(input);
+        setSportsArticles(filtered);
+        setPoliticsArticles(filtered);
+        setEntertainmentArticles(filtered);
+        setNewsArticles(filtered);
         setArticles(filtered);
     }
 
@@ -106,17 +122,17 @@ const ArticleContainer = () => {
 
     
         <Route exact path="/articles/sports" render={(props) => {
-            return <ArticleList articles={sportsArticles} />                
+            return <ArticleList articles={sportsArticles} input={input} onChange={updateInput}/>                
         }}/>
         <Route exact path="/articles/news" render={(props) => {
-            return <ArticleList articles={newsArticles} />                
+            return <ArticleList articles={newsArticles} input={input} onChange={updateInput}/>                
         }}/>
         
         <Route exact path="/articles/entertainment" render={(props) => {
-            return <ArticleList articles={entertainmentArticles} />                
+            return <ArticleList articles={entertainmentArticles} input={input} onChange={updateInput}/>                
         }}/>
         <Route exact path="/articles/politics" render={(props) => {
-            return <ArticleList articles={politicsArticles} />                
+            return <ArticleList articles={politicsArticles} input={input} onChange={updateInput}/>                
         }}/> 
         <Route exact path="/articles/:id" render={(props) => {
             const id = props.match.params.id;

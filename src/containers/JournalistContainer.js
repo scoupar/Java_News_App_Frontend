@@ -13,9 +13,6 @@ const JournalistContainer = () => {
     const [journalistScott, setJournalistScott] = useState([])
     const [journalistTina, setJournalistTina] = useState([])
     const [journalistGregor, setJournalistGregor] = useState([])
-    
-
-
 
     const requestJournalists = function () {
         const request = new Request();
@@ -25,7 +22,7 @@ const JournalistContainer = () => {
         const journalistTinaPromise = request.get("/articles/journalist/name?name=Tina Houston")
         const journalistGregorPromise = request.get("/articles/journalist/name?name=Gregor Simpson")
 
-        Promise.all([journalistPromise, journalistHelenPromise, journalistScottPromise, journalistTinaPromise, journalistGregorPromise ])
+        Promise.all([journalistPromise, journalistHelenPromise, journalistScottPromise, journalistTinaPromise, journalistGregorPromise])
         .then((data) => {
             setJournalists(data[0]);
             setJournalistHelen(data[1]);
@@ -92,20 +89,20 @@ const JournalistContainer = () => {
         
 
         <Route exact path="/articles/journalist/name/Helen Aguda"      render={(props) => {
-                    return <ArticleList articles={journalistHelen} />
+                    return <ArticleList articles={journalistHelen}/>
         }} />
         <Route exact path="/articles/journalist/name/Scott Coupar" render={(props) => {
-                    return <ArticleList articles={journalistScott} />
+                    return <ArticleList articles={journalistScott}/>
 
         }} />
 
         <Route exact path="/articles/journalist/name/Tina Houston" render={(props) => {
-                    return <ArticleList articles={journalistTina} />
+                    return <ArticleList articles={journalistTina}/>
 
         }} />
 
         <Route exact path="/articles/journalist/name/Gregor Simpson" render={(props) => {
-                    return <ArticleList articles={journalistGregor} />
+                    return <ArticleList articles={journalistGregor}/>
 
         }} />
  

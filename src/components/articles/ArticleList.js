@@ -22,7 +22,7 @@ const ArticleList = ({articles, input:keyword, onChange:setKeyword}) => {
         style={BarStyling}
         key="random1"
         value={keyword}
-        placeholder={"search article"}
+        placeholder={"Search for article title..."}
         onChange={(e) => setKeyword(e.target.value)}
         />
         <div className = "article-list">
