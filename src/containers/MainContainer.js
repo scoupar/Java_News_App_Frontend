@@ -30,6 +30,7 @@ const MainContainer = () => {
                <Route path="/articles/category" component={ArticleContainer} />
                <Route path="/articles/journalist/name/Helen" component={ArticleContainer} />
                <Route path ="/admin" component={AdminContainer}/>
+               <Route path ="/articles/search" component={ArticleContainer}/>
 
                                   
 

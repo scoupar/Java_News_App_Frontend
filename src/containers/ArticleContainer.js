@@ -3,6 +3,7 @@ import {Route, Switch} from 'react-router-dom';
 import Request from '../helpers/request';
 import ArticleList from '../components/articles/ArticleList';
 import ArticleDetail from '../components/articles/ArticleDetail';
+
 import Journalist from '../components/journalists/Journalist';
 import AdminArticleList from '../components/admin/AdminArticleList';
 import AdminArticleForm from '../components/admin/AdminArticleForm';
@@ -15,6 +16,9 @@ const ArticleContainer = () => {
     const [entertainmentArticles, setEntertainmentArticles] = useState([]);
     const [politicsArticles, setPoliticsArticles] = useState([]);
     const [articlesJournalist, setArticlesJournalist] = useState([]);
+    const [input, setInput] = useState("");
+    const [articleListDefault, setArticleListDefault] = useState();
+    
 
     
     const requestArticles = function(){
@@ -25,9 +29,11 @@ const ArticleContainer = () => {
         const entertainmentArticlePromise = request.get('/articles/category?category=Entertainment')
         const politicsArticlePromise = request.get('/articles/category?category=Politics')
         const articlesJournalistPromise = request.get('/admin/journalists')
+        const articleListDefaultPromise = request.get('/articles');
 
 
-        Promise.all([articlePromise, sportsArticlePromise, newsArticlePromise, entertainmentArticlePromise, politicsArticlePromise, articlesJournalistPromise])
+        Promise.all([articlePromise, sportsArticlePromise, newsArticlePromise, entertainmentArticlePromise, 
+            politicsArticlePromise, articlesJournalistPromise, articleListDefaultPromise])
         .then((data) => {
             setArticles(data[0]);
             setSportsArticles(data[1]);
@@ -35,20 +41,23 @@ const ArticleContainer = () => {
             setEntertainmentArticles(data[3]);
             setPoliticsArticles(data[4]);
             setArticlesJournalist(data[5]);
+            setArticleListDefault(data[6])
         })
+    }
+
+
+    const updateInput = (input) => {
+        const filtered = articleListDefault.filter(article =>{
+            return article.articleTitle.toLowerCase().includes(input.toLowerCase())
+        })
+        setInput(input);
+        setArticles(filtered);
     }
 
     useEffect(() => {
         requestArticles()
     },[])
 
-
-    // const findArticleByCategory = function(category) {
-    //     return articles.find((article) => {
-    //         return article.category;
-    //     })
-    // }
-    
 
     const findArticleById = function(id){
         return articles.find((article) => {
@@ -78,11 +87,6 @@ const ArticleContainer = () => {
         .then(() => window.location = "/admin/articles/")
     }
 
-    // const findArticleByCategory = function(category){
-    //     return articles.find((articles) => {
-    //         return articles.category
-    //     })
-    // }
     if(!articles){
         return null
     }
@@ -90,17 +94,20 @@ const ArticleContainer = () => {
     return (
         <>
         <Switch>
-
+       
         <Route exact path="/articles" render = {
             () => {
-                return <ArticleList articles = {articles}/>
+                return <ArticleList articles = {articles} input={input} onChange={updateInput}> 
+                </ArticleList>
             }
         }/>
 
+        {/* <ArticleSearchBar input={input} onChange={updateInput}/> */}
+
+    
         <Route exact path="/articles/sports" render={(props) => {
             return <ArticleList articles={sportsArticles} />                
         }}/>
-
         <Route exact path="/articles/news" render={(props) => {
             return <ArticleList articles={newsArticles} />                
         }}/>
@@ -108,63 +115,53 @@ const ArticleContainer = () => {
         <Route exact path="/articles/entertainment" render={(props) => {
             return <ArticleList articles={entertainmentArticles} />                
         }}/>
-
         <Route exact path="/articles/politics" render={(props) => {
             return <ArticleList articles={politicsArticles} />                
         }}/> 
-
         <Route exact path="/articles/:id" render={(props) => {
             const id = props.match.params.id;
             const article = findArticleById(id);
             return <ArticleDetail article={article} />
-                
+          
         }}/>
         {/* <Route path ="/articles/:category" render={(props) => {
             const category = props.match.params.category;
             const article = findArticleByCategory(category);
             return <ArticleDetail article={article} />
         }} /> */}
-
         <Route exact path ="/admin/articles" render = {(props) =>{
             const id = props.match.params.id;
             const article = findArticleById(id);
             return <AdminArticleList article = {article} articles = {articles}  onDelete = {handleDelete}/>
         }}/>
-
         <Route exact path="/admin/articles/:id" render={(props) => {
             const id = props.match.params.id;
             const article = findArticleById(id);
             return <AdminArticleForm article={article} journalists = {articlesJournalist} onUpdate ={handleUpdate} onCreate = {handlePost}/>
-                
         }}/>
-
-        
-
-
         <Route exact path="/articles/sports" render = {
             () => {
                 return <ArticleList articles = {sportsArticles}/>
             }}/>
-
         <Route exact path="/articles/news" render = {
             () => {
                 return <ArticleList articles = {newsArticles}/>
             }
         }/>
-
         <Route exact path="/articles/entertainment" render = {
             () => {
                 return <ArticleList articles = {entertainmentArticles}/>
             }
         }/>
-
         <Route exact path="/articles/politics" render = {
             () => {
                 return <ArticleList articles = {politicsArticles}/>
             }
         }/>
-        </Switch>
         
+             
+        </Switch>
+       
         </>
         
     )
