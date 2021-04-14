@@ -17,7 +17,6 @@ const TopArticleList = ({articles, input:keyword, onChange:setKeyword}) => {
 
     return (
         <>
-<<<<<<< HEAD
         <input
         style={BarStyling}
         key="random1"
@@ -25,9 +24,7 @@ const TopArticleList = ({articles, input:keyword, onChange:setKeyword}) => {
         placeholder={"Search for article title..."}
         onChange={(e) => setKeyword(e.target.value)}
         />
-=======
         <h1 className = 'page-title'>Breaking News</h1>
->>>>>>> develop
         <div className="top-article-list">
             <ul>
                 {topArticleListItems}
