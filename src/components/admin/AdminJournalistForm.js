@@ -62,6 +62,8 @@ const AdminJournalistForm = ({journalist, onCreate, onUpdate}) => {
         <input type ="text" placeholder ="Name" name ="name" onChange = {handleChange} value = {stateJournalist.name}/>
         <label for ="title">Title: </label>
         <input type ="text" placeholder ="Title" name = "title" onChange = {handleChange} value = {stateJournalist.title}/>
+        <label for = "image">Image Url:</label>
+        <input type = "text" placeholder = " Image URL" name ="image" onChange = {handleChange} value = {stateJournalist.image}/>
         <button type = "submit">Save</button>
         </form>
         </>

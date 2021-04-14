@@ -65,3 +65,24 @@
 h3 {
     font-size: 16px;
 }
+
+.search-bar-container{
+    margin-top:50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(252, 252, 252, 0.5);
+}
+
+.search-bar{
+    justify-content: center;
+    width: 20rem;
+    height:auto;
+    margin:10px;
+    border:none;
+}
+
+#search{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+

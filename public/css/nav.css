@@ -25,6 +25,8 @@ header {
     text-decoration: none;
 }
 
+
+
 .nav_ul > ul > li {
     text-decoration: none;
 }
@@ -34,4 +36,8 @@ header {
     color: white;
     text-decoration: none;
     font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.navLink > a:hover{
+    color:rgb(161, 197, 214);
 }
