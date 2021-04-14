@@ -17,14 +17,17 @@ const TopArticleList = ({articles, input:keyword, onChange:setKeyword}) => {
 
     return (
         <>
-        <input
-        style={BarStyling}
+        <h1 className = 'page-title'>Breaking News</h1>
+        <div className = "search-bar-container">
+        <p id ="search">Search:</p>
+        <input className = "search-bar"
+        // style={BarStyling}
         key="random1"
         value={keyword}
         placeholder={"Search for article title..."}
         onChange={(e) => setKeyword(e.target.value)}
         />
-        <h1 className = 'page-title'>Breaking News</h1>
+        </div>
         <div className="top-article-list">
             <ul>
                 {topArticleListItems}
